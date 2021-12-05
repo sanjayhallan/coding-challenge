@@ -50,6 +50,5 @@ jobs:
 
       - name: Initialise terraform
         working-directory: terraform
-        run: |
-          terraform init
+        run: terraform init
 
