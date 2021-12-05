@@ -41,3 +41,15 @@ jobs:
       - name: push container
         run: |
           docker push ghcr.io/jdockerty/coding-challenge
+
+  verify_infra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+
+      - name: Initialise terraform
+        run: |
+          cd terraform
+          terraform init
+
