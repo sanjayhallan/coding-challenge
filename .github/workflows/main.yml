@@ -45,9 +45,11 @@ jobs:
   verify_infra:
     runs-on: ubuntu-latest
     steps:
-      - uses: hashicorp/setup-terraform@v1
       - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: "1.0.11"
       
-      - name: init tf
+      - name: Terraform init
         run: terraform init
         working-directory: terraform
