@@ -1,0 +1,15 @@
+[
+    {
+        "image": "ghcr.io/jdockerty/coding-challenge:latest",
+        "name": "bidnamic_hello_world_app",
+        "portMappings": [
+            {
+                "containerPort": 5000,
+                "hostPort": 5000
+            }
+        ],
+        "requiresCompatibilities": [ 
+            "FARGATE" 
+         ]
+    }
+]
