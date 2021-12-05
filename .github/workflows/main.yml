@@ -46,9 +46,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: hashicorp/setup-terraform@v1
 
       - name: Initialise terraform
-        working-directory: terraform
-        run: terraform init
-
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_subcommand: 'init'
+          tf_actions_working_dir: terraform
