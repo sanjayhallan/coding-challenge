@@ -49,7 +49,7 @@ jobs:
       - uses: hashicorp/setup-terraform@v1
 
       - name: Initialise terraform
+        working-directory: terraform
         run: |
-          cd terraform
           terraform init
 
