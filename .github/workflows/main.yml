@@ -57,7 +57,5 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-west-1
 
-      - name: Terraform init
-        run: |
-          cd terraform
-          terraform init
+      - name: Deploy new container
+        run: aws ecs update-service --cluster bidnamic-ecs --service python-app --force-new-deployment
