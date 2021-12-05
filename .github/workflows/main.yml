@@ -30,6 +30,7 @@ jobs:
   
   build_container:
     runs-on: ubuntu-latest
+    if: success()
     steps:
       - uses: actions/checkout@v2
       - name: login to ghcr.io
@@ -42,7 +43,9 @@ jobs:
         run: |
           docker push ghcr.io/jdockerty/coding-challenge
 
-  verify_infra:
+  deploy_service:
+    
+    if: success() && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
